@@ -1,8 +1,8 @@
 package user
 
 import (
-	"go_project_structure/common_pkg/proxy"
-	"go_project_structure/internal/pkg/middlewares"
+	"github.com/hossain-asif/hotel_auth_service/common_pkg/proxy"
+	"github.com/hossain-asif/hotel_auth_service/internal/pkg/middlewares"
 	"net/http"
 
 	"github.com/go-chi/chi/v5"

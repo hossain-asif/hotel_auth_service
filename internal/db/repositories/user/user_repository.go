@@ -3,10 +3,10 @@ package repositories
 import (
 	"context"
 	"fmt"
-	"go_project_structure/common_pkg/logger"
-	"go_project_structure/internal/db/models"
-	"go_project_structure/internal/dto"
-	"go_project_structure/utils/pg"
+	"github.com/hossain-asif/hotel_auth_service/common_pkg/logger"
+	"github.com/hossain-asif/hotel_auth_service/internal/db/models"
+	"github.com/hossain-asif/hotel_auth_service/internal/dto"
+	"github.com/hossain-asif/hotel_auth_service/utils/pg"
 	"strings"
 
 	"gorm.io/gorm"

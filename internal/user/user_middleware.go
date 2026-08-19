@@ -5,8 +5,8 @@ import (
 	"net/http"
 	"path/filepath"
 
-	"go_project_structure/common_pkg/json"
-	"go_project_structure/common_pkg/logger"
+	"github.com/hossain-asif/hotel_auth_service/common_pkg/json"
+	"github.com/hossain-asif/hotel_auth_service/common_pkg/logger"
 )
 
 var userMiddlewareLogger = logger.Log.Scope("", "middleware", "user_middleware")

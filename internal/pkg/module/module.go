@@ -1,7 +1,7 @@
 package module
 
 import (
-	"go_project_structure/common_pkg/scheduler"
+	"github.com/hossain-asif/hotel_auth_service/common_pkg/scheduler"
 
 	"github.com/go-chi/chi/v5"
 	"github.com/redis/go-redis/v9"

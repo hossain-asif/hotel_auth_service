@@ -2,8 +2,8 @@ package app
 
 import (
 	"fmt"
-	"go_project_structure/common_pkg/logger"
-	"go_project_structure/config/resources"
+	"github.com/hossain-asif/hotel_auth_service/common_pkg/logger"
+	"github.com/hossain-asif/hotel_auth_service/config/resources"
 
 	"github.com/redis/go-redis/v9"
 	"gorm.io/gorm"

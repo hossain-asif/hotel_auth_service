@@ -3,7 +3,7 @@ package rpc
 import (
 	"encoding/json"
 	"fmt"
-	"go_project_structure/common_pkg/http_client"
+	"github.com/hossain-asif/hotel_auth_service/common_pkg/http_client"
 	"net/http"
 
 	"github.com/gojek/heimdall/v7/hystrix"

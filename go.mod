@@ -1,4 +1,4 @@
-module go_project_structure
+module github.com/hossain-asif/hotel_auth_service
 
 go 1.25.7
 

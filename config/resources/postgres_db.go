@@ -2,8 +2,8 @@ package resources
 
 import (
 	"fmt"
-	"go_project_structure/common_pkg/logger"
-	env "go_project_structure/config/env"
+	"github.com/hossain-asif/hotel_auth_service/common_pkg/logger"
+	env "github.com/hossain-asif/hotel_auth_service/config/env"
 	"os"
 	"time"
 	goLog "log"

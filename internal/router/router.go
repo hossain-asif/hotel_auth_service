@@ -1,8 +1,8 @@
 package router
 
 import (
-	"go_project_structure/internal/pkg/module"
-	"go_project_structure/internal/user"
+	"github.com/hossain-asif/hotel_auth_service/internal/pkg/module"
+	"github.com/hossain-asif/hotel_auth_service/internal/user"
 
 	"github.com/go-chi/chi/v5"
 )

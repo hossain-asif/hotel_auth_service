@@ -1,7 +1,7 @@
 package user
 
 import (
-	"go_project_structure/internal/db/models"
+	"github.com/hossain-asif/hotel_auth_service/internal/db/models"
 	"sync"
 	"time"
 )

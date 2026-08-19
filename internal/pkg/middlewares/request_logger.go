@@ -2,8 +2,8 @@ package middlewares
 
 import (
 	"context"
-	"go_project_structure/common_pkg/logger"
-	enums "go_project_structure/utils/enums"
+	"github.com/hossain-asif/hotel_auth_service/common_pkg/logger"
+	enums "github.com/hossain-asif/hotel_auth_service/utils/enums"
 	"net/http"
 	"time"
 

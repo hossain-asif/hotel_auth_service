@@ -5,10 +5,10 @@ import (
 	"net/http"
 	"strings"
 
-	"go_project_structure/common_pkg/json"
-	"go_project_structure/common_pkg/logger"
-	env "go_project_structure/config/env"
-	enums "go_project_structure/utils/enums"
+	"github.com/hossain-asif/hotel_auth_service/common_pkg/json"
+	"github.com/hossain-asif/hotel_auth_service/common_pkg/logger"
+	env "github.com/hossain-asif/hotel_auth_service/config/env"
+	enums "github.com/hossain-asif/hotel_auth_service/utils/enums"
 
 	"github.com/golang-jwt/jwt/v5"
 )

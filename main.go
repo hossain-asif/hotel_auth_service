@@ -3,9 +3,9 @@ package main
 import (
 	"log"
 
-	"go_project_structure/app"
-	"go_project_structure/config/env"
-	"go_project_structure/internal/router"
+	"github.com/hossain-asif/hotel_auth_service/app"
+	"github.com/hossain-asif/hotel_auth_service/config/env"
+	"github.com/hossain-asif/hotel_auth_service/internal/router"
 )
 
 func main() {

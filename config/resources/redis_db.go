@@ -3,7 +3,7 @@ package resources
 import (
 	"context"
 	"fmt"
-	env "go_project_structure/config/env"
+	env "github.com/hossain-asif/hotel_auth_service/config/env"
 	"time"
 
 	"github.com/redis/go-redis/v9"

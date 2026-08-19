@@ -3,11 +3,11 @@ package repositories
 import (
 	"context"
 	"fmt"
-	"go_project_structure/common_pkg/pagination/cursor_pagination"
-	"go_project_structure/common_pkg/pagination/helper"
-	"go_project_structure/common_pkg/pagination/offset_pagination"
-	"go_project_structure/common_pkg/pagination/seek_pagination"
-	"go_project_structure/internal/db/models"
+	"github.com/hossain-asif/hotel_auth_service/common_pkg/pagination/cursor_pagination"
+	"github.com/hossain-asif/hotel_auth_service/common_pkg/pagination/helper"
+	"github.com/hossain-asif/hotel_auth_service/common_pkg/pagination/offset_pagination"
+	"github.com/hossain-asif/hotel_auth_service/common_pkg/pagination/seek_pagination"
+	"github.com/hossain-asif/hotel_auth_service/internal/db/models"
 	"time"
 )
 

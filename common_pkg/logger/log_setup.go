@@ -1,7 +1,7 @@
 package logger
 
 import (
-	config "go_project_structure/config/env"
+	config "github.com/hossain-asif/hotel_auth_service/config/env"
 	"os"
 
 	"github.com/sirupsen/logrus"

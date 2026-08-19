@@ -2,7 +2,7 @@ package dto
 
 import (
 	"encoding/json"
-	"go_project_structure/utils/custom_validation"
+	"github.com/hossain-asif/hotel_auth_service/utils/custom_validation"
 	"strconv"
 	"time"
 

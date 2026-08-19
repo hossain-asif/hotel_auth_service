@@ -2,10 +2,10 @@ package user
 
 import (
 	"context"
-	common_csv "go_project_structure/common_pkg/csv"
-	"go_project_structure/internal/dto"
-	"go_project_structure/internal/db/models"
-	"go_project_structure/utils/authentication"
+	common_csv "github.com/hossain-asif/hotel_auth_service/common_pkg/csv"
+	"github.com/hossain-asif/hotel_auth_service/internal/dto"
+	"github.com/hossain-asif/hotel_auth_service/internal/db/models"
+	"github.com/hossain-asif/hotel_auth_service/utils/authentication"
 )
 
 func (us *UserServiceImpl) ExportUsersAsCSV(ctx context.Context) (string, error) {

@@ -2,8 +2,8 @@ package app
 
 import (
 	"fmt"
-	"go_project_structure/common_pkg/scheduler"
-	"go_project_structure/internal/pkg/module"
+	"github.com/hossain-asif/hotel_auth_service/common_pkg/scheduler"
+	"github.com/hossain-asif/hotel_auth_service/internal/pkg/module"
 
 	"github.com/go-chi/chi/v5"
 )

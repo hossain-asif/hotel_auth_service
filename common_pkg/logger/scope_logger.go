@@ -2,7 +2,7 @@ package logger
 
 import (
 	"context"
-	"go_project_structure/utils/enums"
+	"github.com/hossain-asif/hotel_auth_service/utils/enums"
 
 	"github.com/sirupsen/logrus"
 )
