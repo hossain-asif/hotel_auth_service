@@ -1,0 +1,7 @@
+.env
+/logs
+/file_data
+.vscode
+.github
+Prompt.txt
+.claude*
