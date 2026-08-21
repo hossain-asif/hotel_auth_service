@@ -1,14 +1,14 @@
 package models
 
-// import "time"
+import "gorm.io/gorm"
 
-// // user_role.go — explicit join model with extra fields
-// type UserRole struct {
-// 	UserID     uint      `gorm:"primaryKey"`
-// 	RoleID     uint      `gorm:"primaryKey"`
-// 	AssignedAt time.Time `gorm:"not null;default:NOW()"`
-// 	AssignedBy uint      // user ID of admin who assigned the role
+// user_roles — 20260820215418_create_user_roles_table.sql
+// FKs: 20260821113401 (user_id → users.id), 20260821113448 (role_id → roles.id)
+type UserRole struct {
+	gorm.Model
+	UserID uint `gorm:"not null"`
+	RoleID uint `gorm:"not null"`
 
-// 	User User `gorm:"foreignKey:UserID"`
-// 	Role Role `gorm:"foreignKey:RoleID"`
-// }
+	User User `gorm:"foreignKey:UserID;constraint:OnDelete:CASCADE"`
+	Role Role `gorm:"foreignKey:RoleID;constraint:OnDelete:CASCADE"`
+}

@@ -6,17 +6,17 @@ import (
 	"gorm.io/gorm"
 )
 
+// users — 20260212174735_create_user_table.sql
 type User struct {
 	gorm.Model
 	Name     string `gorm:"size:255;not null"`
-	Email    string `gorm:"size:255;unique;not null"`
+	Email    string `gorm:"size:255;uniqueIndex:idx_users_email;not null"`
 	Password string `gorm:"size:255;not null"`
 
-	// One-to-many: a user can have multiple 2FA tokens
-	// TwoFATokens []UserTwoFAToken `gorm:"foreignKey:UserID"`
-	// Roles       []Role           `gorm:"foreignKey:UserID"`
+	// join rows from user_roles
+	UserRoles []UserRole `gorm:"foreignKey:UserID"`
 }
 
-// Implement Cursorable interface — one-time, two lines per model
+// Cursorable — used by your pagination package
 func (u User) GetID() uint             { return u.ID }
 func (u User) GetCreatedAt() time.Time { return u.CreatedAt }

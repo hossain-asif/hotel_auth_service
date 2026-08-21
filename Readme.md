@@ -101,7 +101,7 @@ drop_<source_table>_<column>_foreign_key
 
 UNIQUE
 ────────────────────────────────────
-add_unique_<table>_<column>
+add_unique_to_<table>_<column>
 drop_<table>_<column>_unique
 
 CHECK

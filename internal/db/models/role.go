@@ -1,19 +1,15 @@
 package models
 
-// import (
-// 	"time"
+import (
+	"gorm.io/gorm"
+)
 
-// 	"gorm.io/gorm"
-// )
+// roles — 20260820211406_create_role_table.sql
+type Role struct {
+	gorm.Model
+	Name        string  `gorm:"size:255;index:idx_roles_name;not null"`
+	Description *string `gorm:"type:text"`
 
-// type Role struct {
-// 	gorm.Model
-// 	Name        string `gorm:"size:100;unique;not null"` // "admin", "editor", "viewer"
-// 	Description string `gorm:"size:255"`
-
-// 	// Many-to-many back-reference (optional, for preloading)
-// 	Users []UserRole `gorm:"foreignKey:RoleID"`
-// }
-
-// func (r Role) GetID() uint             { return r.ID }
-// func (r Role) GetCreatedAt() time.Time { return r.CreatedAt }
+	UserRoles       []UserRole       `gorm:"foreignKey:RoleID"`
+	RolePermissions []RolePermission `gorm:"foreignKey:RoleID"`
+}
