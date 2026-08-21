@@ -1,9 +1,11 @@
 -- +goose Up
 -- +goose StatementBegin
-CREATE UNIQUE INDEX idx_users_email ON users (email);
+ALTER TABLE users
+    ADD CONSTRAINT uq_users_email UNIQUE (email);
 -- +goose StatementEnd
 
 -- +goose Down
 -- +goose StatementBegin
-DROP INDEX IF EXISTS idx_users_email;
+ALTER TABLE users
+    DROP CONSTRAINT IF EXISTS uq_users_email;
 -- +goose StatementEnd

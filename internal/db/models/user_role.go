@@ -1,14 +1,18 @@
 package models
 
-import "gorm.io/gorm"
+import (
+	"gorm.io/gorm"
+)
 
-// user_roles — 20260820215418_create_user_roles_table.sql
-// FKs: 20260821113401 (user_id → users.id), 20260821113448 (role_id → roles.id)
+// fk_user_roles_user_id -> users.id  ON DELETE CASCADE
+// fk_user_roles_role_id -> roles.id  ON DELETE CASCADE
 type UserRole struct {
 	gorm.Model
-	UserID uint `gorm:"not null"`
-	RoleID uint `gorm:"not null"`
+	UserID uint `gorm:"column:user_id;not null"`
+	RoleID uint `gorm:"column:role_id;not null"`
 
-	User User `gorm:"foreignKey:UserID;constraint:OnDelete:CASCADE"`
-	Role Role `gorm:"foreignKey:RoleID;constraint:OnDelete:CASCADE"`
+	User User `gorm:"foreignKey:UserID;references:ID;constraint:OnDelete:CASCADE"`
+	Role Role `gorm:"foreignKey:RoleID;references:ID;constraint:OnDelete:CASCADE"`
 }
+
+func (UserRole) TableName() string { return "user_roles" }

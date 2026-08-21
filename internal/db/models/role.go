@@ -4,12 +4,15 @@ import (
 	"gorm.io/gorm"
 )
 
-// roles — 20260820211406_create_role_table.sql
+// unique constraint : uq_roles_name        
+// index             : idx_roles_deleted_at
 type Role struct {
 	gorm.Model
-	Name        string  `gorm:"size:255;index:idx_roles_name;not null"`
-	Description *string `gorm:"type:text"`
+	Name        string  `gorm:"column:name;size:255;uniqueIndex:uq_roles_name;not null"`
+	Description *string `gorm:"column:description;type:text"`
 
 	UserRoles       []UserRole       `gorm:"foreignKey:RoleID"`
 	RolePermissions []RolePermission `gorm:"foreignKey:RoleID"`
 }
+
+func (Role) TableName() string { return "roles" }

@@ -6,17 +6,20 @@ import (
 	"gorm.io/gorm"
 )
 
-// users — 20260212174735_create_user_table.sql
+// unique constraint : uq_users_email       
+// index             : idx_users_deleted_at
 type User struct {
 	gorm.Model
-	Name     string `gorm:"size:255;not null"`
-	Email    string `gorm:"size:255;uniqueIndex:idx_users_email;not null"`
-	Password string `gorm:"size:255;not null"`
+	Name     string `gorm:"column:name;size:255;not null"`
+	Email    string `gorm:"column:email;size:255;uniqueIndex:uq_users_email;not null"`
+	Password string `gorm:"column:password;size:255;not null"`
 
 	// join rows from user_roles
 	UserRoles []UserRole `gorm:"foreignKey:UserID"`
 }
 
-// Cursorable — used by your pagination package
+func (User) TableName() string { return "users" }
+
+// seek_pagination.Entity
 func (u User) GetID() uint             { return u.ID }
 func (u User) GetCreatedAt() time.Time { return u.CreatedAt }

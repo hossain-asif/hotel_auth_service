@@ -1,9 +1,11 @@
 -- +goose Up
 -- +goose StatementBegin
-CREATE INDEX idx_roles_name ON roles (name);
+ALTER TABLE roles
+ADD CONSTRAINT uq_roles_name UNIQUE (name);
 -- +goose StatementEnd
 
 -- +goose Down
 -- +goose StatementBegin
-DROP INDEX IF EXISTS idx_roles_name;
+ALTER TABLE roles
+DROP CONSTRAINT IF EXISTS uq_roles_name;
 -- +goose StatementEnd
