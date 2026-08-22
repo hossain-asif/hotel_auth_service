@@ -3,16 +3,17 @@ package user
 import (
 	"context"
 	"fmt"
+	"time"
+
 	"github.com/hossain-asif/hotel_auth_service/common_pkg/logger"
 	"github.com/hossain-asif/hotel_auth_service/common_pkg/pagination/cursor_pagination"
 	"github.com/hossain-asif/hotel_auth_service/common_pkg/pagination/offset_pagination"
 	"github.com/hossain-asif/hotel_auth_service/common_pkg/pagination/seek_pagination"
 	env "github.com/hossain-asif/hotel_auth_service/config/env"
-	"github.com/hossain-asif/hotel_auth_service/internal/dto"
 	"github.com/hossain-asif/hotel_auth_service/internal/db/models"
-	repositories "github.com/hossain-asif/hotel_auth_service/internal/db/repositories/user"
+	userrepo "github.com/hossain-asif/hotel_auth_service/internal/db/repositories/user"
+	"github.com/hossain-asif/hotel_auth_service/internal/dto"
 	"github.com/hossain-asif/hotel_auth_service/utils/authentication"
-	"time"
 
 	"github.com/golang-jwt/jwt/v5"
 )
@@ -37,11 +38,11 @@ type UserService interface {
 }
 
 type UserServiceImpl struct {
-	userRepository repositories.UserRepository
+	userRepository userrepo.UserRepository
 	userServiceLog *logger.ScopeLogger
 }
 
-func NewUserService(_userRepository repositories.UserRepository) UserService {
+func NewUserService(_userRepository userrepo.UserRepository) UserService {
 	return &UserServiceImpl{
 		userRepository: _userRepository,
 		userServiceLog: logger.Log.Scope("", "user", "user_service"),

@@ -1,14 +1,15 @@
-package repositories
+package userrepo
 
 import (
 	"context"
 	"fmt"
+	"time"
+
 	"github.com/hossain-asif/hotel_auth_service/common_pkg/pagination/cursor_pagination"
 	"github.com/hossain-asif/hotel_auth_service/common_pkg/pagination/helper"
 	"github.com/hossain-asif/hotel_auth_service/common_pkg/pagination/offset_pagination"
 	"github.com/hossain-asif/hotel_auth_service/common_pkg/pagination/seek_pagination"
 	"github.com/hossain-asif/hotel_auth_service/internal/db/models"
-	"time"
 )
 
 type PaginationRepository interface {

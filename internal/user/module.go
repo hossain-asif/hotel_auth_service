@@ -2,21 +2,22 @@ package user
 
 import (
 	"context"
-	"github.com/hossain-asif/hotel_auth_service/common_pkg/scheduler"
-	repositories "github.com/hossain-asif/hotel_auth_service/internal/db/repositories/user"
-	"github.com/hossain-asif/hotel_auth_service/internal/pkg/module"
 	"time"
+
+	"github.com/hossain-asif/hotel_auth_service/common_pkg/scheduler"
+	userrepo "github.com/hossain-asif/hotel_auth_service/internal/db/repositories/user"
+	"github.com/hossain-asif/hotel_auth_service/internal/pkg/module"
 
 	"github.com/go-chi/chi/v5"
 )
 
 type UserModule struct {
-	repository repositories.UserRepository
+	repository userrepo.UserRepository
 	service    UserService
 }
 
 func (um *UserModule) Initialize(dependency module.Dependency, r chi.Router) ([]scheduler.Task, error) {
-	um.repository = repositories.NewUserRepository(dependency.DB)
+	um.repository = userrepo.NewUserRepository(dependency.DB)
 	um.service = NewUserService(um.repository)
 	handler := NewUserHandler(um.service)
 	router := NewUserRouter(handler)
